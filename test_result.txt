@@ -1,0 +1,232 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.3.1, pluggy-1.0.0
+rootdir: /home/seuronao/Documents/Lista de Quadrados Perfeitos-04-24-2023-04-50-00/ResiaKK
+collected 7 items
+
+test_main.py .FFFFFF                                                     [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_fizz[1-1] ________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f418ed62800>
+test_input = '1', expected_output = '1'
+
+    @pytest.mark.parametrize(
+        "test_input, expected_output",
+        [
+            ("0", ""),
+            ("1", "1"),
+            ("2", "1\n4"),
+            ("3", "1\n4\n9"),
+            ("4", "1\n4\n9\n16"),
+            ("5", "1\n4\n9\n16\n25"),
+            ("6", "1\n4\n9\n16\n25\n36"),
+        ],
+    )
+    def test_fizz(monkeypatch: MonkeyPatch, test_input: str, expected_output: str):
+        mocked_input = lambda prompt="": test_input
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert expected_output in mocked_stdout.getvalue().strip()
+E       AssertionError: assert '1' in ''
+E        +  where '' = <built-in method strip of str object at 0x7f418f908030>()
+E        +    where <built-in method strip of str object at 0x7f418f908030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7f418eb5dfc0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f418eb5dfc0> = <_io.StringIO object at 0x7f418eb5dfc0>.getvalue
+
+test_main.py:33: AssertionError
+______________________________ test_fizz[2-1\n4] _______________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f418ed62560>
+test_input = '2', expected_output = '1\n4'
+
+    @pytest.mark.parametrize(
+        "test_input, expected_output",
+        [
+            ("0", ""),
+            ("1", "1"),
+            ("2", "1\n4"),
+            ("3", "1\n4\n9"),
+            ("4", "1\n4\n9\n16"),
+            ("5", "1\n4\n9\n16\n25"),
+            ("6", "1\n4\n9\n16\n25\n36"),
+        ],
+    )
+    def test_fizz(monkeypatch: MonkeyPatch, test_input: str, expected_output: str):
+        mocked_input = lambda prompt="": test_input
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert expected_output in mocked_stdout.getvalue().strip()
+E       AssertionError: assert '1\n4' in ''
+E        +  where '' = <built-in method strip of str object at 0x7f418f908030>()
+E        +    where <built-in method strip of str object at 0x7f418f908030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7f418eb5e9e0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f418eb5e9e0> = <_io.StringIO object at 0x7f418eb5e9e0>.getvalue
+
+test_main.py:33: AssertionError
+_____________________________ test_fizz[3-1\n4\n9] _____________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f418ed63e80>
+test_input = '3', expected_output = '1\n4\n9'
+
+    @pytest.mark.parametrize(
+        "test_input, expected_output",
+        [
+            ("0", ""),
+            ("1", "1"),
+            ("2", "1\n4"),
+            ("3", "1\n4\n9"),
+            ("4", "1\n4\n9\n16"),
+            ("5", "1\n4\n9\n16\n25"),
+            ("6", "1\n4\n9\n16\n25\n36"),
+        ],
+    )
+    def test_fizz(monkeypatch: MonkeyPatch, test_input: str, expected_output: str):
+        mocked_input = lambda prompt="": test_input
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert expected_output in mocked_stdout.getvalue().strip()
+E       AssertionError: assert '1\n4\n9' in ''
+E        +  where '' = <built-in method strip of str object at 0x7f418f908030>()
+E        +    where <built-in method strip of str object at 0x7f418f908030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7f418eb5edd0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f418eb5edd0> = <_io.StringIO object at 0x7f418eb5edd0>.getvalue
+
+test_main.py:33: AssertionError
+___________________________ test_fizz[4-1\n4\n9\n16] ___________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f418ed63b80>
+test_input = '4', expected_output = '1\n4\n9\n16'
+
+    @pytest.mark.parametrize(
+        "test_input, expected_output",
+        [
+            ("0", ""),
+            ("1", "1"),
+            ("2", "1\n4"),
+            ("3", "1\n4\n9"),
+            ("4", "1\n4\n9\n16"),
+            ("5", "1\n4\n9\n16\n25"),
+            ("6", "1\n4\n9\n16\n25\n36"),
+        ],
+    )
+    def test_fizz(monkeypatch: MonkeyPatch, test_input: str, expected_output: str):
+        mocked_input = lambda prompt="": test_input
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert expected_output in mocked_stdout.getvalue().strip()
+E       AssertionError: assert '1\n4\n9\n16' in ''
+E        +  where '' = <built-in method strip of str object at 0x7f418f908030>()
+E        +    where <built-in method strip of str object at 0x7f418f908030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7f418eb5f130>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f418eb5f130> = <_io.StringIO object at 0x7f418eb5f130>.getvalue
+
+test_main.py:33: AssertionError
+_________________________ test_fizz[5-1\n4\n9\n16\n25] _________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f418eba4100>
+test_input = '5', expected_output = '1\n4\n9\n16\n25'
+
+    @pytest.mark.parametrize(
+        "test_input, expected_output",
+        [
+            ("0", ""),
+            ("1", "1"),
+            ("2", "1\n4"),
+            ("3", "1\n4\n9"),
+            ("4", "1\n4\n9\n16"),
+            ("5", "1\n4\n9\n16\n25"),
+            ("6", "1\n4\n9\n16\n25\n36"),
+        ],
+    )
+    def test_fizz(monkeypatch: MonkeyPatch, test_input: str, expected_output: str):
+        mocked_input = lambda prompt="": test_input
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert expected_output in mocked_stdout.getvalue().strip()
+E       AssertionError: assert '1\n4\n9\n16\n25' in ''
+E        +  where '' = <built-in method strip of str object at 0x7f418f908030>()
+E        +    where <built-in method strip of str object at 0x7f418f908030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7f418eb5eb90>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f418eb5eb90> = <_io.StringIO object at 0x7f418eb5eb90>.getvalue
+
+test_main.py:33: AssertionError
+_______________________ test_fizz[6-1\n4\n9\n16\n25\n36] _______________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f418ed63dc0>
+test_input = '6', expected_output = '1\n4\n9\n16\n25\n36'
+
+    @pytest.mark.parametrize(
+        "test_input, expected_output",
+        [
+            ("0", ""),
+            ("1", "1"),
+            ("2", "1\n4"),
+            ("3", "1\n4\n9"),
+            ("4", "1\n4\n9\n16"),
+            ("5", "1\n4\n9\n16\n25"),
+            ("6", "1\n4\n9\n16\n25\n36"),
+        ],
+    )
+    def test_fizz(monkeypatch: MonkeyPatch, test_input: str, expected_output: str):
+        mocked_input = lambda prompt="": test_input
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert expected_output in mocked_stdout.getvalue().strip()
+E       AssertionError: assert '1\n4\n9\n16\n25\n36' in ''
+E        +  where '' = <built-in method strip of str object at 0x7f418f908030>()
+E        +    where <built-in method strip of str object at 0x7f418f908030> = ''.strip
+E        +      where '' = <built-in method getvalue of _io.StringIO object at 0x7f418eb5f490>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f418eb5f490> = <_io.StringIO object at 0x7f418eb5f490>.getvalue
+
+test_main.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED test_main.py::test_fizz[1-1] - AssertionError: assert '1' in ''
+FAILED test_main.py::test_fizz[2-1\n4] - AssertionError: assert '1\n4' in ''
+FAILED test_main.py::test_fizz[3-1\n4\n9] - AssertionError: assert '1\n4\n9' ...
+FAILED test_main.py::test_fizz[4-1\n4\n9\n16] - AssertionError: assert '1\n4\...
+FAILED test_main.py::test_fizz[5-1\n4\n9\n16\n25] - AssertionError: assert '1...
+FAILED test_main.py::test_fizz[6-1\n4\n9\n16\n25\n36] - AssertionError: asser...
+========================= 6 failed, 1 passed in 0.05s ==========================
